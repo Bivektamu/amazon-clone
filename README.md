@@ -1,24 +1,8 @@
 # Amazon Clone
 
-Amazon Clone project is a clone of a Amazon web app. Web technology includes React, CSS3, HTML5, JavaScript, ES6, firebase and git.
+Amazon Clone project is a clone of a Amazon web app. It is a complete full stack project with proper authentication, cart, order and payment sytem integrated.
 
-This repository consists of only frontend aspect of the project.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### npm install
-
-Installs all client dependencies required for project.
-
-### npm run build
-
-Builds the app for production to the build folder.
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.
-Your app is ready to be deployed!
+Web technology includes React, CSS3, HTML5, JavaScript, ES6, firebase, RESTful api, axios, NoSQL database architecture, and git.
 
 ## App Info
 
