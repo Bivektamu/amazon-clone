@@ -7,6 +7,7 @@ import CurrencyFormat from 'react-currency-format';
 import { getBasketTotal } from './reducer';
 import axios from './axios';
 import { useHistory } from 'react-router-dom';
+import { db } from './firebase';
 
 
 
@@ -42,11 +43,11 @@ function Payment() {
             });
 
             setClientSecret(response.data.clientSecret);
-
-
         }
         getClientSecret();
     }, [basket])
+
+    console.log('client secret', clientSecret);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -58,9 +59,23 @@ function Payment() {
             }
         }).then(({ paymentIntent }) => {
             // payment intent = payment confirmation
+            db.collection('users')
+                .doc(user?.uid)
+                .collection('orders')
+                .doc(paymentIntent.id)
+                .set({
+                    basket: basket,
+                    amount: paymentIntent.amount,
+                    created: paymentIntent.created
+                })
+
             setSucceeded(true);
             setError(null);
             setProcessing(false);
+
+            dispatch({
+                type: 'EMPTY_BASKET'
+            });
 
             history.replace('/orders');
         })
