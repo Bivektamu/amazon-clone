@@ -33,6 +33,7 @@
 
 .payment__details > form {
   max-width: 400px;
+  width: 100%;
 }
 
 .payment__details h3 {
@@ -49,4 +50,25 @@
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846a29;
   color: #111;
+}
+
+@media screen and (max-width: 760px) {
+  .payment__section {
+    flex-wrap: wrap;
+    padding: 20px 15px;
+    margin: 0;
+  }
+  .payment__title {
+    flex: initial;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .payment__address, .payment__details, .payment__items {
+    flex:initial;
+    width: 100%;
+  }
+
+  .payment__address {
+    padding-left: 20px;
+  }
 }

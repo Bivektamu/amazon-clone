@@ -40,3 +40,16 @@
 .product__rating {
   display: flex;
 }
+
+
+@media screen and (max-width: 760px) {
+
+  .home__row {
+    flex-wrap: wrap;
+  }
+  
+  .product__info {
+    height: 115px;
+  }
+
+}
